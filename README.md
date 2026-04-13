@@ -28,6 +28,6 @@ name, class schedules, location, and links to their social media.
 ![Demo](assets/demo.gif)-->
 
 ## 🔗 Live site
-[Ver sitio →](https://urielcasas.github.io/Pagina---Aikido/){:target="_blank" rel="noopener"}
+[Ver sitio →](https://urielcasas.github.io/Pagina---Aikido/){:target="_blank"rel="noopener"}
 <!--<a href="https://urielcasas.github.io/Pagina---Aikido/" target="_blank">[Ver sitio →]</a>-->
 <!--[Ver sitio →](https://urielcasas.github.io/Pagina---Aikido/)-->
