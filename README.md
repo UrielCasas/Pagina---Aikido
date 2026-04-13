@@ -1,10 +1,10 @@
-## 🔎 Aikido — Maemuki Dojo
+## 🥋 Aikido — Maemuki Dojo
 
 Promotional website for Maemuki Dojo, an Aikido dojo located in Argentina, Buenos Aires, Luján.
 
 Built for a real client as part of my frontend learning journey.
 
-## 🥋 About the project
+## 🔎 About the project
 
 Rodolfo Casas has been teaching Aikido for 4 years but had no online presence in a web site.
 
