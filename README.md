@@ -7,6 +7,7 @@ Built for a real client as part of my frontend learning journey.
 ## 🥋 About the project
 
 Rodolfo Casas has been teaching Aikido for 4 years but had no online presence in a web site.
+
 This site gives the dojo a place to share what Aikido is, the meaning behind the dojo's 
 name, class schedules, location, and links to their social media.
 
