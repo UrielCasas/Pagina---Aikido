@@ -1,7 +1,7 @@
 ## 🔎 Aikido — Maemuki Dojo
 
-> Promotional website for Maemuki Dojo, an Aikido dojo located in Argentina, Buenos Aires, Luján.
-> Built for a real client as part of my frontend learning journey.
+Promotional website for Maemuki Dojo, an Aikido dojo located in Argentina, Buenos Aires, Luján.
+Built for a real client as part of my frontend learning journey.
 
 ## 🥋 About the project
 
