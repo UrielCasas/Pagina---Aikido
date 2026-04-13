@@ -29,4 +29,4 @@ name, class schedules, location, and links to their social media.
 
 ## 🔗 Live site
 
-[Ver sitio →](https://tuusuario.github.io/nombre-del-repo)
+[Ver sitio →](https://urielcasas.github.io/Pagina---Aikido/)
