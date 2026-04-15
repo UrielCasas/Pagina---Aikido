@@ -1,9 +1,0 @@
-HTML
-- El Navbar, el contenedor de información, y el contenedor de información de consulta, fueron adaptados a Bootstrap.
-- Información real fue ingresado en el "contenedor de información" (main) y en "el contenedor de consulta".
-- Se agrego un formulario dentro del "contenedor de consulta" para que el usuario pueda enviar un mensaje por mail (solo es frontend).
-- Se agrego links a distintos medios sociales en la clase "social"
-
-CSS:
-- Tamaño de imagenes en la clase "container-item" fueron reducidos de tamaño.
-- En la clase "background" fue cambiado el fondo de pantalla de la entrada del gimnasio, a una dentro de la zona de práctica.
