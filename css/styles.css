@@ -158,6 +158,19 @@ header{
     }
 
 
+.carousel-item {
+    height:   600px;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width:  80%;
+    height: 100%;
+    object-fit:      cover;
+    object-position: center;
+}
+
+
 .title{                                 /* Nombre del dojo con el logo */
     display:        flex;
     flex-direction: column;
