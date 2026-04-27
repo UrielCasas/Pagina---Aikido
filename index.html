@@ -144,39 +144,87 @@
                     </section>
 
                     <section class="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.2023615445532!2d-59.098363823532196!3d-34.573745855917196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc7d00683c01a1%3A0x976bdbce978c5476!2zTUFFTVVLSSBExY1qxY0!5e0!3m2!1ses-419!2sar!4v1775960951482!5m2!1ses-419!2sar" width="100%" height="200px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.2023615445532!2d-59.098363823532196!3d-34.573745855917196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc7d00683c01a1%3A0x976bdbce978c5476!2zTUFFTVVLSSBExY1qxY0!5e0!3m2!1ses-419!2sar!4v1775960951482!5m2!1ses-419!2sar" width="100%" height="250px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </section>
                 </div>
                 
                 <!-- Columna 2: Formulario -->
-                <div class="col-12 col-lg-6 text-center contactanos">
+                <form class="col-12 col-lg-6 text-center contactanos" id="formulario" novalidate>
                     <section>
                         <i class="fa-solid fa-file-signature fa-2xl py-4" style="color: rgb(74, 58, 144);"></i>
                         <h2 class="fw-bolder">Contactanos</h2>
                         <p class="fw-semibold">Complete este formulario de contacto y en breve será comunicado con Usted.</p>
-                        <div class="bg-light bg-opacity-50 p-3 rounded-3 text-start">
+                        <div class="bg-light bg-opacity-50 px-3 pt-3 pb-1 rounded-3 text-start">
                             <div class="row fw-semibold">
+
                                 <div class="col-12 col-lg-6 mb-3">
-                                    <label for="fullname" class="form-label">Nombre y Apellido</label>
-                                    <input type="text" class="form-control" id="fullname">
+                                    <label class="form-label" for="userName">Nombre y Apellido</label>
+                                    <input 
+                                        class = "form-control" 
+                                        type  = "text" 
+                                        id    = "userName"
+                                        name  = "userName"
+                                        autocomplete = "off"
+                                        required
+                                        minlength = "2"
+                                        maxlength = "50"
+                                    />
+                                    <p class="text-danger fw-medium mt-1 d-none" id="alertName">Formato no válido, solo ingrese letras.</p>
                                 </div>
+
                                 <div class="col-12 col-lg-6 mb-3">
-                                    <label for="email" class="form-label">Tu Email</label>
-                                    <input type="email" class="form-control" id="email">
+                                    <label class="form-label" for="userEmail">Tu Email</label>
+                                    <input 
+                                        class = "form-control" 
+                                        type  = "email" 
+                                        id    = "userEmail"
+                                        name  = "userEmail"
+                                        autocomplete = "off"
+                                        required
+                                        minlength = "6"
+                                        maxlength = "254"
+                                    />
+                                    <p class="text-danger fw-medium mt-1 d-none" id="alertEmail">Escriba un correo válido.</p>
                                 </div>
+                                
                             </div>
+
                             <div class="mb-3 fw-semibold">
-                                <label for="issue" class="form-label">Asunto</label>
-                                <input type="text" class="form-control" id="issue">
+                                <label class="form-label" for="userIssue">Asunto</label>
+                                <input 
+                                    class = "form-control" 
+                                    type  = "text" 
+                                    id    = "userIssue"
+                                    name  = "userIssue"
+                                    autocomplete = "off"
+                                    required
+                                    minlength = "5"
+                                    maxlength = "100"
+                                />
+                                <p class="text-danger fw-medium mt-1 d-none" id="alertIssue">Por favor, escriba el mótivo de el formulario.</p>
                             </div>
+
                             <div class="mb-3 fw-semibold">
-                                <label for="message" class="form-label">Comentario</label>
-                                <textarea class="form-control" id="message" rows="5"></textarea>
+                                <label class="form-label" for="userMessage">Comentario</label>
+                                <textarea 
+                                    class = "form-control" 
+                                    id    = "userMessage"
+                                    name  = "userMessage"
+                                    rows  = "5"
+                                    required
+                                    minlength = "10"
+                                    maxlength = "500"
+                                ></textarea>
+                                <p class="text-danger fw-medium mt-1 d-none" id="alertMessage">Por favor, escriba el mensaje que quiera enviar en el formulario.</p>
+                                
                             </div>
-                            <button type="submit" class="btn btn-custom btn-sm w-100">Enviar Mensaje</button>
+
+                            <button type="submit" class="btn btn-custom btn-sm w-100 mb-3">Enviar Mensaje</button>
+                            <div class="alert alert-success d-none" id="alertSuccess">¡Formulario enviado con éxito!</div>
+
                         </div>
                     </section>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -203,5 +251,7 @@
             <a href="https://www.facebook.com/Maemukidojo" target="_blank" class="footer-option">FACEBOOK</a>
             <a href="" class="footer-option">POLÍTICA DE PRIVACIDAD</a>
     </footer>
+
+    <script src="javascript/script.js"></script>
 </body>
 </html>
