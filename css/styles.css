@@ -158,17 +158,17 @@ header{
     }
 
 
-.carousel-item {
+.carousel-item {                    /* Carrusel de imagenes */
     height:   600px;
     overflow: hidden;
 }
 
-.carousel-item img {
-    width:  80%;
-    height: 100%;
-    object-fit:      cover;
-    object-position: center;
-}
+    .carousel-item img {
+        width:  80%;
+        height: 100%;
+        object-fit:      cover;
+        object-position: center;
+    }
 
 
 .title{                                 /* Nombre del dojo con el logo */
@@ -199,23 +199,16 @@ header{
         opacity:    0.8;
     }
 
-/* 
-.container{                              Contenedor central con información del arte y del dojo 
-    display:    grid;
-    align-items:center;
-    background-color:var(--background-white);
-    gap:        10px;
-} */
 
-    .container-item{
-        place-items:     center;
-        padding:         0;
-        margin-bottom:   80px;
-        overflow:        hidden;
-        border:          3px solid #fff;
-        border-radius:   5px;
-        background-color:var(--background-white);
-    }
+.container-item{                        /* Contenedor de información sobre el arte marcial y el dojo */
+    place-items:     center;
+    padding:         0;
+    margin-bottom:   80px;
+    overflow:        hidden;
+    border:          3px solid #fff;
+    border-radius:   5px;
+    background-color:var(--background-white);
+}
 
     .container-item h2{
         cursor:         pointer;
@@ -258,11 +251,7 @@ header{
 }
 
 .consult{
-    /* display:         grid; */
     text-align:      center;
-    /* grid-auto-rows:  minmax(auto, auto); */
-    /* padding:         0 10px 10px; */
-    /* gap:             20px; */
     border-radius:   10px;
     background-color:rgba(184, 184, 184, 0.7);
 }
@@ -303,7 +292,6 @@ header{
     }
 
     .cronograma p{
-        /* padding-left:7px; */
         font-weight:500;
     }
 
@@ -333,7 +321,6 @@ header{
         justify-content:  center;
         align-items:      center;
         background-color: transparent;
-        /* padding:          0 0 10px; */
     }
 
     iframe{
@@ -509,7 +496,6 @@ footer{                                 /* Sección inferior de la página con l
     }
 
     .container{
-        /* grid-template-columns:  repeat(2, 1fr); */
         gap:        0;
         margin-top: 80px;
     }
@@ -567,38 +553,9 @@ footer{                                 /* Sección inferior de la página con l
         padding:    30px 0;
     }
 
-    /* .consult{
-        grid-template-columns:  repeat(2, 1fr);
-        gap:   30px; 
-    } */
-
-    /* .consult-text{
-        grid-column:1/3;
-    } */
-
-    /* .cronograma{
-        grid-column:1/2;
-        grid-row:   2/3;
-    } */
-
     .cronograma h3, .cronograma p{
         text-align: center;
     }
-
-    /* .ubicacion{
-        grid-column:1/2;
-        grid-row:   3/4;
-    } */
-
-    /* .map{
-        grid-column:2/3;
-        grid-row:   2/4;
-    } */
-
-    /* iframe{
-        grid-column:2/3;
-        grid-row:   2/4;
-    } */
 
     .social{
         justify-content: flex-end;
@@ -610,20 +567,6 @@ footer{                                 /* Sección inferior de la página con l
 }
 
 @media(min-width:940px){
-    /* .container{
-        max-width:   1000px;
-        margin:      80px; 
-        margin-left: auto;
-        margin-right:auto;
-    } */
-
-    /* .consult{
-        max-width:   1000px;
-        margin:      60px;
-        margin-left: auto;
-        margin-right:auto;
-    } */
-
     .social{
         max-width:   1000px;
         margin-left: auto;
