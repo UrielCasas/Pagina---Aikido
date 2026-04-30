@@ -19,6 +19,15 @@ const regUserIssue   = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü0-9\s.,!?¿¡\-]+$/;
 const regUserMessage = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü0-9\s.,!?¿¡\-:;()'"]+$/;
 
 
+// Muestra los errores encontrados
+const mostrarMensajeError = (errores) => {
+    errores.forEach(error => {
+        error.tipo.classList.remove("d-none");
+        error.tipo.textContent = error.msg;
+    })
+};
+
+
 // Testea los campos del formulario, si todo esta bien, muestra un mensaje de éxito.
 formulario.addEventListener("submit", e => {
     e.preventDefault();
@@ -27,12 +36,12 @@ formulario.addEventListener("submit", e => {
     const errores = [];
 
     // Testea el campo "Nombre y Apellido"
-    if (!regUserName.test(userName.value) || !userName.value.trim() || userName.value.trim().length < 3 || userName.value.trim().length > 50) {
+    if (!regUserName.test(userName.value) || userName.value.trim().length < 3 || userName.value.trim().length > 50) {
         userName.classList.add("is-invalid");
 
         errores.push({
             tipo: alertName,
-            msg: "Ingrese entre 2 y 50 caracteres y solo letras."
+            msg: "Ingrese entre 3 y 50 caracteres y solo letras."
         });
 
     } else {
@@ -42,7 +51,7 @@ formulario.addEventListener("submit", e => {
     }
 
     // Testea el campo "Tu Email"
-    if (!regUserEmail.test(userEmail.value) || !userEmail.value.trim()) {
+    if (!regUserEmail.test(userEmail.value)) {
         userEmail.classList.add("is-invalid");
 
         errores.push({
@@ -57,12 +66,12 @@ formulario.addEventListener("submit", e => {
     }
 
     // Testea el campo "Asunto"
-    if (!regUserIssue.test(userIssue.value) || !userIssue.value.trim() || userIssue.value.trim().length < 5 || userIssue.value.trim().length > 100) {
+    if (!regUserIssue.test(userIssue.value) || userIssue.value.trim().length < 5 || userIssue.value.trim().length > 100) {
         userIssue.classList.add("is-invalid");
 
         errores.push({
             tipo: alertIssue,
-            msg: "Escriba el mótivo del formulario entre 5 y 100 caracteres."
+            msg: "Escriba el motivo del formulario entre 5 y 100 caracteres."
         });
 
     } else {
@@ -72,7 +81,7 @@ formulario.addEventListener("submit", e => {
     }
 
     // Testea el campo "Comentario"
-    if (!regUserMessage.test(userMessage.value) || !userMessage.value.trim() || userMessage.value.trim().length < 10 || userMessage.value.trim().length > 500) {
+    if (!regUserMessage.test(userMessage.value) || userMessage.value.trim().length < 10 || userMessage.value.trim().length > 500) {
         userMessage.classList.add("is-invalid");
 
         errores.push({
@@ -86,31 +95,20 @@ formulario.addEventListener("submit", e => {
         alertMessage.classList.add("d-none");
     }
 
-
     // Testea si hubo errores, muestra los errores en caso positivo
-    if(errores.length !== 0) {
+    if (errores.length) {
         mostrarMensajeError(errores);
         return;
     }
 
-    mostrarMensajeExito();
+    // Si no hay errores, se envia el email
+    const serviceID  = 'default_service';
+    const templateID = 'template_vn29hwe';
+
+    emailjs.sendForm(serviceID, templateID, formulario)
+        .then(() => {
+            alertSuccess.classList.remove("d-none");
+        }, (err) => {
+            console.log("Error:", err);
+        });
 });
-
-// Muestra un contador de caracteres en el campo "Asunto"
-// textarea.addEventListener('input', () => {
-//     contado
-// })
-
-// Muestra el mensaje de éxito
-const mostrarMensajeExito = () => {
-    alertSuccess.classList.remove("d-none");
-}
-
-// Muestra los errores encontrados
-const mostrarMensajeError = (errores) => {
-    errores.forEach(error => {
-        error.tipo.classList.remove("d-none");
-        error.tipo.textContent = error.msg;
-    })
-};
-

@@ -15,6 +15,10 @@
 
     <!--  Dirección del archivo CSS  -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">emailjs.init('fRV2xSslQ2oL1JatE')</script>
 </head>
 
 <body>
@@ -60,7 +64,7 @@
     <!-- Imagen que separa la barra de navegación y el título de la página -->
     <section id="carouselDojo" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="3000">
+            <div class="carousel-item active" data-bs-interval="4000">
                 <img src="images/fondo-0.jpg" alt="Maemuki Dojo" class=" d-block w-100">
             </div>
             <div class="carousel-item" data-bs-interval="4000">
@@ -69,7 +73,7 @@
             <div class="carousel-item" data-bs-interval="4000">
                 <img src="images/fondo-2.jpg" alt="Maemuki Dojo" class=" d-block w-100">
             </div>
-            <div class="carousel-item" data-bs-interval="3000">
+            <div class="carousel-item" data-bs-interval="4000">
                 <img src="images/fondo-3.jpg" alt="Maemuki Dojo" class=" d-block w-100">
             </div>
         </div>
@@ -80,13 +84,12 @@
         <button class="carousel-control-next" type="button" data-bs-target="#carouselDojo" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
         </button>
-
     </section>
     
     <!--  Nombre del dojo y logo  -->
     <section class="title">
         <a href="index.html"><h1>MAEMUKI</h1></a>
-        <a href="index.html"><img src="images/logo-MD.png" alt="Logo/Escudo Maemuki Dojo"></a>
+        <a href="index.html"><img class="rounded-circle" src="images/logo-MD.png" alt="Logo/Escudo Maemuki Dojo"></a>
         <a href="index.html"><h1>DOJO</h1></a>
     </section>
     
@@ -167,92 +170,55 @@
                 </div>
                 
                 <!-- Columna 2: Formulario -->
-                <form class="col-12 col-lg-6 text-center contactanos" id="formulario" novalidate>
-                    <section>
+                <div class="col-12 col-lg-6">
+                    <form class="text-center contactanos" id="formulario" novalidate>
                         <i class="fa-solid fa-file-signature fa-2xl py-4" style="color: rgb(74, 58, 144);"></i>
                         <h2 class="fw-bolder">Contactanos</h2>
                         <p class="fw-semibold">Complete este formulario de contacto y en breve será comunicado con Usted.</p>
+
                         <div class="bg-light bg-opacity-50 px-3 pt-3 pb-1 rounded-3 text-start">
                             <div class="row fw-semibold">
 
                                 <div class="col-12 col-lg-6 mb-3">
                                     <label class="form-label" for="userName">Nombre y Apellido</label>
-                                    <input 
-                                        class = "form-control" 
-                                        type  = "text" 
-                                        id    = "userName"
-                                        name  = "userName"
-                                        autocomplete = "off"
-                                        required
-                                        minlength = "2"
-                                        maxlength = "50"
-                                    />
-                                    <p class="text-danger fw-medium mt-1 d-none" id="alertName">Formato no válido, solo ingrese letras.</p>
+                                    <input type="text" id="userName" name="userName" class="form-control" autocomplete="off"/>
+                                    <p id="alertName" class="text-danger fw-medium mt-1 d-none">Formato no válido, solo ingrese letras.</p>
                                 </div>
 
                                 <div class="col-12 col-lg-6 mb-3">
                                     <label class="form-label" for="userEmail">Tu Email</label>
-                                    <input 
-                                        class = "form-control" 
-                                        type  = "email" 
-                                        id    = "userEmail"
-                                        name  = "userEmail"
-                                        autocomplete = "off"
-                                        required
-                                        minlength = "6"
-                                        maxlength = "254"
-                                    />
-                                    <p class="text-danger fw-medium mt-1 d-none" id="alertEmail">Escriba un correo válido.</p>
+                                    <input type="email" id="userEmail" name="userEmail" class="form-control" autocomplete="off"/>
+                                    <p id="alertEmail" class="text-danger fw-medium mt-1 d-none">Escriba un correo válido.</p>
                                 </div>
                                 
                             </div>
 
                             <div class="mb-3 fw-semibold">
                                 <label class="form-label" for="userIssue">Asunto</label>
-                                <input 
-                                    class = "form-control" 
-                                    type  = "text" 
-                                    id    = "userIssue"
-                                    name  = "userIssue"
-                                    autocomplete = "off"
-                                    required
-                                    minlength = "5"
-                                    maxlength = "100"
-                                />
+                                <input type="text" id="userIssue" name="userIssue" class="form-control" autocomplete="off"/>
                                 <p class="text-danger fw-medium mt-1 d-none" id="alertIssue">Por favor, escriba el mótivo de el formulario.</p>
                             </div>
 
                             <div class="mb-3 fw-semibold">
                                 <label class="form-label" for="userMessage">Comentario</label>
-                                <textarea 
-                                    class = "form-control" 
-                                    id    = "userMessage"
-                                    name  = "userMessage"
-                                    rows  = "5"
-                                    required
-                                    minlength = "10"
-                                    maxlength = "500"
-                                ></textarea>
+                                <textarea id="userMessage" name="userMessage" class="form-control" rows="5"></textarea>
                                 <p class="text-danger fw-medium mt-1 d-none" id="alertMessage">Por favor, escriba el mensaje que quiera enviar en el formulario.</p>
-                                
                             </div>
 
                             <button type="submit" class="btn btn-custom btn-sm w-100 mb-3">Enviar Mensaje</button>
                             <div class="alert alert-success d-none" id="alertSuccess">¡Formulario enviado con éxito!</div>
-
                         </div>
-                    </section>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
     
     <!--  Botones de distintos medios sociales  -->
     <div class="social">
-        <a href="#"><i class="fa-brands fa-square-whatsapp"></i></a>
         <a href="https://www.instagram.com/maemukidojo/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-        <a href="https://www.facebook.com/Maemukidojo" target="_blank"><i class="fa-solid fa-square-envelope"></i></a>
+        <a href="https://www.facebook.com/Maemukidojo/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+        <a href="#contacto"><i class="fa-solid fa-square-envelope"></i></a>
     </div>
 
     <!--  Sección inferior con enlaces rápidos de la página  -->
@@ -265,7 +231,7 @@
             <a href="#contacto" class="footer-option">UBICACIÓN</a>
             <a href="#contacto" class="footer-option">TELÉFONO</a>
             <a href="https://www.instagram.com/maemukidojo/" target="_blank" class="footer-option">INSTAGRAM</a>
-            <a href="" class="footer-option">MAIL</a>
+            <a href="#contacto" class="footer-option">MAIL</a>
             <a href="https://www.facebook.com/Maemukidojo" target="_blank" class="footer-option">FACEBOOK</a>
             <a href="" class="footer-option">POLÍTICA DE PRIVACIDAD</a>
     </footer>
