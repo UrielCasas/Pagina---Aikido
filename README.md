@@ -26,6 +26,9 @@ name, class schedules, location, and links to their social media.
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
+## 📦 Services
+![EmailJS](https://img.shields.io/badge/EmailJS-FF7F50?style=flat&logo=maildotru&logoColor=white)
+
 <!--## 📸 Preview
 
 ![Demo](assets/demo.gif)-->
